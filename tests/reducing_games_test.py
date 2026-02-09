@@ -8,7 +8,7 @@ from reducing_games import reduce_games
 raw_games_filepath = "./tests/raw_games_test.json"
 reduced_games_filepath = "./tests/reduced_games_test.csv"
 
-cols = ["id", "slug", "playtime", "platforms", "stores", "tags", "genres"]
+cols = ["id", "slug", "playtime", "platforms", "stores", "tags", "genres", "rating"]
 
 @pytest.fixture(scope="session")
 def test_raw_games():
