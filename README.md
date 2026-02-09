@@ -18,8 +18,10 @@ plan:
 The table of responsibility:
 | File | Responsibility |
 | ---- | -------------- |
+| main.py             | Launching all project flow up to creating scores |
 | model_predictor.py  | Predicting rating of games with scores |
 | training_model.py   | Generating scores with retrieved games |
+| reducing_games.py   | Reducing games to readable form |
 | retrieving_data.py  | Retrieving games with RAWG API |
 | games_api.py        | Handling requests to RAWG API  |
 | request_instance.py | General class for creating API classes |
