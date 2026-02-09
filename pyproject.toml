@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "game_rating_predictor"
+version = "1.0.0"
+description = "This project creates the ml-model of game-critic that predicts a game rating"
+authors = [{ name = "XtereO", email = "fake@gmail.com" }]
+
+[tool.setuptools]
+packages = { find = { where = ["src"] } }

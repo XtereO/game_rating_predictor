@@ -14,3 +14,21 @@ plan:
 - save the scores of model into .json/.csv file 
 - make a file that will use saved params so then we can just predict game rating by our .csv data
 - make refactoring of these codes (fetcher_data, training_data, model_predictor), be sure that they work after refactoring
+
+The table of responsibility:
+| File | Responsibility |
+| ---- | -------------- |
+| model_predictor.py  | Predicting rating of games with scores |
+| training_model.py   | Generating scores with retrieved games |
+| retrieving_data.py  | Retrieving games with RAWG API |
+| games_api.py        | Handling requests to RAWG API  |
+| request_instance.py | General class for creating API classes |
+
+
+![alt text](doc_imgs/GameType.png)
+
+![alt text](doc_imgs/ReducedGameType.png)
+
+![alt text](doc_imgs/ReduceGamesFunction.png)
+
+![alt text](doc_imgs/TrainingGameType.png)
