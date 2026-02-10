@@ -18,6 +18,8 @@ def reduce_games(raw_games):
     return reduced_games
 
 def _join_by_slug(arr, col=""):
+    if(arr==None):
+        return ""
     if(col==""):
         return ",".join(a["slug"] for a in arr)
     return ",".join(a[col]["slug"] for a in arr)
