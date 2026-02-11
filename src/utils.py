@@ -2,6 +2,7 @@ import joblib
 import pandas as pd
 
 models_path = {
+    "training_cols": "training_cols.csv",
     "min_max_scaler": "min_max_scaler.joblib",
     "pca": "pca.joblib",
     "predicting_model": "predicting_model.joblib"
