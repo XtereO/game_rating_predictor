@@ -1,6 +1,14 @@
 import joblib
 import pandas as pd
 
+data_path = {
+    "predicted_val_games_ratings": "predicted_val_games_ratings.csv",
+    "raw_games": "raw_games.json",
+    "raw_val_games": "raw_val_games.json",
+    "reduced_games": "reduced_games.csv",
+    "reduced_val_games": "reduced_val_games.csv",
+}
+
 models_path = {
     "training_cols": "training_cols.csv",
     "min_max_scaler": "min_max_scaler.joblib",

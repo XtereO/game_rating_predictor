@@ -12,16 +12,16 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.tree import DecisionTreeRegressor
 
-from utils import prepare_reduced_games, save_model, models_path
+from utils import prepare_reduced_games, save_model, models_path, data_path
 
-def train_model(include_charts=False):
-    data = pd.read_csv("reduced_games.csv")
+def train_model(include_plots=False):
+    data = pd.read_csv(data_path["reduced_games"])
     data_numeric = prepare_reduced_games(data)
     print(data_numeric.describe())
     (pd.Series(data_numeric.columns)).to_csv(models_path["training_cols"], index=False, header=None)
 
-    if (include_charts):
-        show_charts(data_numeric)
+    if (include_plots):
+        show_plots(data_numeric)
 
     scaler = MinMaxScaler()
     data_numeric["playtime"] = scaler.fit_transform(data_numeric[["playtime"]])
@@ -60,7 +60,7 @@ def train_model(include_charts=False):
 
     return best_model
 
-def show_charts(data):
+def show_plots(data):
     correlation_matrix = data.corr()
     print(correlation_matrix)
 

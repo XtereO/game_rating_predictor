@@ -67,7 +67,9 @@ The best model (Linear Regression without Tags with PCA) gives the following pre
 
 ![alt text](doc_imgs/RatingsComparisonPlot.png)
 
-Conclusion: MSE is not enough to grade model, r2 helps to show that our values aren't just avg (our models give avg value so it gives good MSE)
+Conclusions: 
+- MSE metric is not enough to grade models; 
+- R2 helps to show that our values aren't just average (our models give an average value so it gives good MSE).
 
 
 ## Launching instructions
@@ -84,11 +86,11 @@ After that run the following command to install required packages for this proje
 Then run `pip install -e .` in the root of the project so you can setup the "importing" paths between the folders src and tests.
 
 ### Running project
-To run project go to src folder and run:
+To run project go to src folder (run in the root of the project `cd src`) and run:
 
 `python main.py 0 0`
 
-In case you've downloaded already files you can use `1 1` at the end so you can prevent pulling train and test data from RAWG api. In case you want to see charts: go to the file `src/main.py` and put flags `include_charts` and `include_ratings_plot` to `True`. 
+In case you've already downloaded files you can use `1 1` at the end so you can prevent pulling train (first arg) and test data (second arg) from RAWG api. In case you want to see charts: go to the file `src/main.py` and put flags `include_plots` and `include_ratings_chart` to `True`. 
 
 Actually you can run only training file (put 1 at the end if you'd like to see charts):
 

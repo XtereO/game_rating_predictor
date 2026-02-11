@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from utils import prepare_reduced_games, load_model, models_path
 
-def predict_games_ratings(data, include_ratings_plot=False):
+def predict_games_ratings(data, include_ratings_chart=False):
     val_ratings = data.loc[:, "rating"] if "rating" in data.columns else pd.Series([])
     data = prepare_reduced_games(data)
     
@@ -18,7 +18,7 @@ def predict_games_ratings(data, include_ratings_plot=False):
         else:
             training_cols_data[col] = pd.Series(np.zeros(data_num_rows), dtype="int")
     data = pd.DataFrame(training_cols_data)
-    print(data.describe())
+    print("val data \n",data.describe())
     if "rating" in data.columns:
         data = data.drop("rating", axis="columns")
     data = data.fillna(0)
@@ -32,8 +32,7 @@ def predict_games_ratings(data, include_ratings_plot=False):
     model = load_model(models_path["predicting_model"])
     ratings = pd.Series(model.predict(data))
 
-    print(val_ratings.size, ratings.size)
-    if(include_ratings_plot and val_ratings.size == ratings.size):
+    if(include_ratings_chart and val_ratings.size == ratings.size):
         show_ratings_plot(val_ratings, ratings)
 
     return ratings
